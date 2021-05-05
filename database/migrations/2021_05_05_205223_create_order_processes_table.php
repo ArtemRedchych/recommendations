@@ -16,7 +16,7 @@ class CreateOrderProcessesTable extends Migration
         Schema::create('order_processes', function (Blueprint $table) {
             $table->bigInteger('number_order');
             $table->bigInteger('id_customers');
-            $table->dateTime('created')->nullable()->default(new DateTime());
+            $table->string('created',20)->nullable();
             $table->double('final_price', 15, 8)->nullable()->default(0);
 
             $table->foreign('id_customers')->references('id')->on('custommers');
