@@ -1,131 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
---
--- Хост: localhost
--- Время создания: Апр 17 2021 г., 15:23
--- Версия сервера: 10.1.44-MariaDB-0+deb9u1
--- Версия PHP: 5.6.37-1+0~20180725093819.2+stretch~1.gbp606419
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- База данных: `biooo_cz_www`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `new_products`
---
-
-CREATE TABLE `new_products` (
-  `id` int(11) NOT NULL,
-  `id_category` int(11) NOT NULL,
-  `code` varchar(30) NOT NULL,
-  `title` varchar(250) NOT NULL,
-  `author` text NOT NULL,
-  `publisher` text NOT NULL,
-  `genre` int(11) NOT NULL,
-  `isbn` varchar(50) NOT NULL,
-  `ean` varchar(50) NOT NULL,
-  `page_count` int(11) NOT NULL,
-  `issue_year` int(11) NOT NULL,
-  `supply_date` date NOT NULL,
-  `size` varchar(50) NOT NULL,
-  `weight` int(11) NOT NULL,
-  `binding` varchar(100) NOT NULL,
-  `imgurl` text NOT NULL,
-  `new` int(11) NOT NULL,
-  `preliminary` int(11) NOT NULL,
-  `stack_date` date NOT NULL,
-  `sale` int(11) NOT NULL,
-  `descr` text NOT NULL,
-  `price` decimal(7,2) NOT NULL,
-  `dph` int(11) NOT NULL,
-  `price_dph` decimal(7,2) NOT NULL,
-  `availability` int(11) NOT NULL,
-  `availability_text` varchar(255) NOT NULL,
-  `note` text NOT NULL,
-  `modified` datetime NOT NULL,
-  `cat1` varchar(30) NOT NULL,
-  `cat2` varchar(30) NOT NULL,
-  `cat3` varchar(30) NOT NULL,
-  `brands_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `keywords` text,
-  `heureka_categories_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `usage` longtext,
-  `google_merchants_categories_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `x` bigint(20) UNSIGNED DEFAULT NULL,
-  `y` bigint(20) UNSIGNED DEFAULT NULL,
-  `z` bigint(20) UNSIGNED DEFAULT NULL,
-  `completed` smallint(1) DEFAULT '0',
-  `checked` smallint(1) DEFAULT '0',
-  `correction` smallint(1) DEFAULT '0',
-  `original_name` varchar(255) DEFAULT NULL,
-  `original_product_price` decimal(7,2) DEFAULT NULL,
-  `type` int(11) DEFAULT '1',
-  `price_points` decimal(7,0) DEFAULT '0',
-  `default_category_id` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `flag_update_title` smallint(1) DEFAULT '1',
-  `abra_title` varchar(255) DEFAULT '',
-  `abra_quantity` int(11) DEFAULT '0',
-  `flag_allow_zasilkovna` smallint(1) DEFAULT '1',
-  `pro_purchase_price_without_dph` decimal(10,2) DEFAULT '0.00',
-  `pro_manufacturer_code` varchar(125) DEFAULT '',
-  `pro_purchase_price_list_price_without_dph` decimal(10,2) DEFAULT '0.00',
-  `pro_purchase_price_discount` decimal(10,2) DEFAULT '0.00',
-  `pro_purchase_price_update_datetime` timestamp NULL DEFAULT NULL,
-  `pro_order_koef` decimal(10,6) DEFAULT '0.000000',
-  `pro_purchase_price_list_price_eur` decimal(10,2) DEFAULT '0.00',
-  `pro_availability_datetime_change` timestamp NULL DEFAULT '0000-00-00 00:00:00',
-  `pro_first_activation_datetime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
-  `pro_turnover` varchar(2) DEFAULT '',
-  `pro_monthly_sales_quantity` int(11) DEFAULT NULL,
-  `pro_store_in_box_insert` smallint(1) DEFAULT '0',
-  `pro_price_tags_types_id` bigint(20) UNSIGNED DEFAULT '1',
-  `pro_price_tag_size` varchar(255) DEFAULT NULL,
-  `pro_price_tags_product_name` varchar(60) DEFAULT '',
-  `pro_price_tags_product_publisher` varchar(60) DEFAULT '',
-  `pro_has_tester` smallint(1) DEFAULT '0',
-  `pro_quick_search_string` text,
-  `pro_remove_from_google_index` smallint(1) DEFAULT '0',
-  `pro_max_order_sum` int(11) UNSIGNED DEFAULT '0',
-  `pro_is_voucher` smallint(1) DEFAULT '0',
-  `pro_purchase_price_list_price_without_dph_eur` decimal(10,2) DEFAULT '0.00',
-  `pro_purchase_price_list_price_without_dph_date_last_updated` date DEFAULT NULL,
-  `pro_sales_koef` int(11) DEFAULT '0',
-  `pro_show_price_per_piece` tinyint(1) DEFAULT '1',
-  `pro_purchase_price_eur` decimal(10,2) DEFAULT '0.00',
-  `pro_inventory_turnover` decimal(10,2) DEFAULT '0.00',
-  `pro_prefix_id` int(11) DEFAULT NULL,
-  `pro_main_buyer_id` int(11) DEFAULT NULL,
-  `pro_created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `pro_last_update_datetime` timestamp NULL DEFAULT NULL,
-  `pro_last_update_user_id` int(11) DEFAULT NULL,
-  `pro_simple_ingredients_text` text,
-  `pro_show_simple_ingredients` tinyint(1) DEFAULT '0',
-  `pro_rating` decimal(2,1) DEFAULT NULL,
-  `pro_placed_in_insert_box_variant_id` int(11) DEFAULT NULL,
-  `pro_type` int(11) DEFAULT NULL,
-  `pro_mod_price_list_description` text,
-  `pro_recommended_price` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `new_products`
---
-
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (1, 248, 'Pleťová voda Hydro-Performance', 'I+M Naturkosmetik', '150 ml', '329.75', 21, 1),
 (2, 354, 'Kondicionér Freistil', 'I+M Naturkosmetik', '200 ml', '296.69', 21, 1),
 (3, 400, 'Čisticí mléko Age-Protect', 'I+M Naturkosmetik', '150 ml', '329.75', 21, 1),
@@ -717,7 +590,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (589, 254, 'Pleťová voda kosatcová', 'Weleda', '200 ml', '240.83', 20, 1),
 (590, 253, 'Masážní olej s arnikou', 'Weleda', '50 ml', '180.99', 21, 4),
 (591, 259, 'Růžový hydratační krém', 'Weleda', '30 ml', '387.60', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (592, 259, 'Růžový noční krém', 'Weleda', '30 ml', '412.40', 21, 4),
 (593, 252, 'Kosatcový noční krém', 'Weleda', '30 ml', '313.22', 21, 4),
 (594, 252, 'Kosatcový denní krém', 'Weleda', '30 ml', '288.43', 21, 4),
@@ -1291,7 +1164,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (1162, 1239, 'TCM formule 205 Jin Gu Die Shang Wan, kuličky', 'Lanzhou Pharmaceutical', '33 g, 192-200 ks', '186.96', 15, 4),
 (1163, 1239, 'TCM formule 002 Yin Qiao Jie Du Wan', 'Lanzhou Pharmaceutical', '33 g, 192-200 ks', '186.96', 15, 4),
 (1164, 1239, 'TCM formule 003 Sang Yu Yin Wan', 'Lanzhou Pharmaceutical', '33 g, 192-200 ks (kuliček)', '186.96', 15, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (1165, 1239, 'TCM formule 007 Bi Mi Gan Wan', 'Lanzhou Pharmaceutical', '33 g, 192-200 ks', '186.96', 15, 10),
 (1166, 1239, 'TCM formule 011 Wu Wei Xiao Du Wan', 'Lanzhou Pharmaceutical', '33 g, 192-200 ks', '186.96', 15, 4),
 (1167, 1239, 'TCM formule 071 Mu Xiang Shun Qi Wan', 'Lanzhou Pharmaceutical', '33 g, 192-200 ks (kuliček)', '186.96', 15, 1),
@@ -1895,7 +1768,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (1765, 248, 'Květinová voda santalové dřevo', 'Saloos', '50 ml', '95.87', 21, 1),
 (1766, 1239, 'Masážní olej devatero kvítí', 'Saloos', '50 ml', '99.17', 21, 4),
 (1767, 253, 'Masážní olej erotika', 'Saloos', '50 ml', '104.13', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (1768, 253, 'Masážní olej maratonec', 'Saloos', '50 ml', '103.31', 21, 4),
 (1769, 253, 'Masážní olej růže', 'Saloos', '50 ml', '153.72', 21, 4),
 (1770, 253, 'Masážní olej relax', 'Saloos', '50 ml', '104.13', 21, 4),
@@ -2497,7 +2370,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (2366, 1239, 'Pačule', 'Nobilis Tilia', '10 ml', '164.46', 21, 1),
 (2367, 292, 'Sauna', 'Nobilis Tilia', '10 ml', '123.14', 21, 1),
 (2368, 1239, 'Muškátový oříšek', 'Nobilis Tilia', '10 ml', '156.20', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (2369, 1239, 'Oregano (Dobromysl)', 'Nobilis Tilia', '10 ml', '168.60', 21, 4),
 (2370, 1239, 'Kopr - vyřaz', 'Nobilis Tilia', '10 ml', '98.35', 21, 1),
 (2371, 1239, 'Fenykl', 'Nobilis Tilia', '10 ml', '123.14', 21, 1),
@@ -3089,7 +2962,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (2957, 1239, 'Elixir de Parfum, parfém s květy Dr. Bacha krizový', 'Biofloral', '100 ml', '779.17', 20, 1),
 (2958, 375, 'Tribo, kapsle', 'Ecce Vita', '60 ks', '242.61', 15, 4),
 (2959, 1239, 'Kombinovaná esence ve spreji první pomoc', 'Les Fleurs de Bach', '10 ml', '276.52', 15, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (2960, 1239, 'Kombinovaná esence ve spreji anti-stress', 'Les Fleurs de Bach', '10 ml', '276.52', 15, 4),
 (2961, 1239, 'Esence Vervain', 'Les Fleurs de Bach', '10 ml', '239.13', 15, 1),
 (2962, 1239, 'Esence Olive', 'Les Fleurs de Bach', '10 ml', '239.13', 15, 1),
@@ -3693,7 +3566,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (3560, 378, 'Lesk na rty 05 smyslná hnědá, Trend Sensitiv', 'Lavera', '6,5 ml', '205.79', 21, 1),
 (3561, 378, 'Lesk na rty 01 třpytivá hvězda, Trend Sensitiv', 'Lavera', '6,5 ml', '205.79', 21, 1),
 (3562, 1239, 'Korektor přírodní 01 světlý, Trend Sensitiv', 'Lavera', '6,5 ml', '205.79', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (3563, 1239, 'Korektor přírodní 02 (03) střední, Trend Sensitiv', 'Lavera', '6,5 ml', '205.79', 21, 1),
 (3564, 347, 'Řasenka zesilující 02 hnědá, Trend Sensitiv', 'Lavera', '6,5 ml', '238.84', 21, 1),
 (3565, 1239, 'Esence Cherry Plum', 'Les Fleurs de Bach', '10 ml', '239.13', 15, 1),
@@ -4257,7 +4130,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (4123, 1239, 'Mýdlo nimba, Bon Auroville', 'Auroville', '50 g', '57.02', 21, 1),
 (4124, 1239, 'x Mýdlo kurkuma M, Bon Auroville', 'Auroville', '50 g', '49.17', 20, 1),
 (4125, 1239, 'Mýdlo lotos, Bon Auroville', 'Auroville', '50 g', '57.02', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (4126, 1239, 'Čistící mýdlo pro mazlíčky, Bon Auroville', 'Auroville', '100 g', '86.78', 21, 1),
 (4127, 1239, 'Mýdlo jasmín, Bon Auroville', 'Auroville', '50 g', '57.02', 21, 1),
 (4128, 1239, 'Mýdlo divoká růže, Bon Auroville', 'Auroville', '50 g', '57.02', 21, 1),
@@ -4823,7 +4696,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (4688, 340, 'Bělicí prostředek Ekowhite', 'Henep', '500 g', '145.45', 21, 1),
 (4689, 266, 'Balzám po holení, Terra Men', 'Mastic spa', '100 ml', '495.87', 21, 1),
 (4690, 133, 'Scrub a pleťová maska se zeleným jílem', 'Argital', '75 ml', '272.73', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (4691, 266, 'Pěna na holení, Terra Men', 'Mastic spa', '200 ml', '380.17', 21, 1),
 (4692, 318, 'Vlasová mycí pěna na lupy Lupynol', 'Henep', '150 ml', '222.31', 21, 1),
 (4693, 1239, 'Sprchový olej lemongrass', 'Saloos', '125 ml', '104.96', 21, 4),
@@ -5393,7 +5266,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (5257, 339, 'Pečující dětský krém Babynol', 'Henep', '100 ml', '237.19', 21, 1),
 (5258, 239, 'Konopný olej, bio', 'Saloos', '125 ml', '162.61', 15, 1),
 (5259, 335, 'Pečující dětský olej Babynol', 'Henep', '150 ml', '166.12', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (5260, 360, 'Henna Zlatá blond, Premium Végétal', 'Henné Color', '100 g', '223.14', 21, 1),
 (5261, 1239, 'Čaj citronová tráva, zázvor a citrusy, bio', 'English Tea Shop', '30 g, 20 ks', '69.57', 15, 4),
 (5262, 1239, 'Bytová vůně Fruits des Bois', 'Molinard', '100 ml', '441.32', 21, 1),
@@ -5966,7 +5839,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (5829, 1239, 'Vonné tyčinky indické Myrrh', 'Hem', '20 - 30 ks', '27.27', 21, 1),
 (5830, 1239, 'Vonné tyčinky indické Night Queen', 'Hem', '20 - 30 ks', '27.27', 21, 1),
 (5831, 1239, 'Vonné tyčinky indické Precious Fragrance', 'Hem', '20 - 30 ks', '27.27', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (5832, 1239, 'Vonné tyčinky indické Rain Forest', 'Hem', '20 - 30 ks', '27.27', 21, 1),
 (5833, 1239, 'Vonné tyčinky indické Sandal Cinnamon', 'Hem', '20 - 30 ks', '27.27', 21, 1),
 (5834, 1239, 'Vonné tyčinky indické Sun', 'Hem', '20 - 30 ks', '22.31', 21, 1),
@@ -6515,7 +6388,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (6377, 1239, 'Sprchový gel Lemon Fresh bio citron a papaya', 'SANTE', '200 ml', '145.45', 21, 1),
 (6378, 247, 'Tělové mléko Lemon Fresh', 'SANTE', '150 ml', '145.45', 21, 1),
 (6379, 1239, 'Bio repelent proti komárům', 'Argital', '90 ml', '322.31', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (6380, 284, 'Levandulová květinová voda', 'Argital', '125 ml', '355.37', 21, 1),
 (6381, 248, 'Růžová květinová voda', 'Argital', '125 ml', '446.28', 21, 1),
 (6382, 230, 'Ochranný dynamizovaný olej s arnikou', 'Argital', '125 ml', '347.11', 21, 4),
@@ -7120,7 +6993,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (6981, 1239, 'Vonné tyčinky lotus', 'Auroville', '12 ks', '40.50', 21, 1),
 (6982, 1239, 'Vonné tyčinky konvalinka', 'Auroville', '12 ks', '40.50', 21, 1),
 (6983, 1239, 'Vonné tyčinky jasmín', 'Auroville', '12 ks', '40.50', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (6984, 1239, 'Vonné tyčinky pižmo', 'Auroville', '12 ks', '40.50', 21, 1),
 (6985, 1239, 'Vonné tyčinky baobab prstnatý', 'Auroville', '12 ks', '40.50', 21, 1),
 (6986, 1239, 'Vonné tyčinky bazalka', 'Auroville', '18 ks', '40.50', 21, 1),
@@ -7704,7 +7577,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (7564, 0, 'Prostředek na nádobí Sensitive', 'Klar', '1,5 l', '144.63', 21, 1),
 (7565, 0, 'Dezinfekční prostředek', 'Klar', '250 ml', '152.89', 21, 1),
 (7566, 0, 'Hygienický sprej', 'Klar', '250 ml', '152.89', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (7567, 0, 'Prášek do myčky', 'Klar', '1,375 kg', '205.79', 21, 1),
 (7568, 0, 'Univerzální čistič', 'Klar', '125 ml', '30.58', 21, 1),
 (7569, 0, 'Tuhé mýdlo na ruce', 'Klar', '100 g', '23.97', 21, 1),
@@ -8306,7 +8179,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (8165, 0, 'Šalvěj Bio', 'BioAroma', '5 ml', '173.55', 21, 1),
 (8166, 0, 'Vavřín Bio', 'BioAroma', '5 ml', '185.12', 21, 1),
 (8167, 0, 'Tymián Bio', 'BioAroma', '5 ml', '197.52', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (8168, 0, 'Saturejka Bio', 'BioAroma', '5 ml', '200.00', 21, 1),
 (8169, 0, 'Diktamový olej', 'BioAroma', '50 ml', '222.31', 21, 1),
 (8170, 0, 'Diktamos Bio', 'BioAroma', '5 ml', '36.36', 21, 1),
@@ -8882,7 +8755,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (8740, 0, 'Kondicionér pro suché a poškozené vlasy s mirabelkovým olejem', 'Coslys', '250 ml', '222.31', 21, 4),
 (8741, 0, 'Chia semínka, bio', 'Naturalis', '250 g', '138.26', 15, 4),
 (8742, 0, 'Guarana, bio', 'Naturalis', '100 g', '225.22', 15, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (8743, 0, 'Camu Camu, bio', 'Naturalis', '100 g', '364.35', 15, 1),
 (8744, 0, 'Maqui Berry', 'Naturalis', '100 g', '373.04', 15, 1),
 (8745, 0, 'Acerola, bio', 'Naturalis', '100 g', '329.57', 15, 4),
@@ -9488,7 +9361,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (9345, 0, 'Matná rtěnka 466 Chocolate', 'ZAO', '3,5 g bambusový obal', '380.17', 21, 1),
 (9346, 0, 'Matná rtěnka 467 Dark Nude', 'ZAO', '3,5 g bambusový obal', '374.38', 21, 4),
 (9347, 0, 'Matná rtěnka 468 Plum', 'ZAO', '3,5 g bambusový obal', '380.17', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (9348, 0, 'Matná rtěnka 469 Nude Rose', 'ZAO', '3,5 g bambusový obal', '374.38', 21, 4),
 (9349, 0, 'Matná rtěnka 470 Satin Dark Purple', 'ZAO', '3,5 g bambusový obal', '374.38', 21, 4),
 (9350, 0, 'Korektor 491 Ivory', 'ZAO', '3,5 g bambusový obal', '371.90', 21, 4),
@@ -10078,7 +9951,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (9934, 0, 'Dárkový set Mléko & Med, Wellness 2015', 'Lavera', '200 ml + 200 ml', '247.11', 21, 1),
 (9935, 0, 'Vonné tyčinky indické Eucalyptus', 'Hem', '20 - 30 ks', '27.27', 21, 1),
 (9936, 0, 'Obnovující noční krém, Time Miracle', 'MÁDARA', '20 ml', '0.83', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (9937, 0, 'Obnovující sérum, Time Miracle', 'MÁDARA', '10 ml', '0.83', 21, 1),
 (9938, 0, 'Kartáč z olivového dřeva, kombinovaný', 'Redecker', '1 ks, 21,5 cm', '1123.14', 21, 4),
 (9939, 0, 'Látková vložka intimní - různé barvy', 'Skaličanka', '1 ks', '95.04', 21, 1),
@@ -10691,7 +10564,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10546, 0, 'Beco Pocket', 'Beco Pets', '1 ks, růžová', '205.79', 21, 1),
 (10547, 0, 'Beco Pocket', 'Beco Pets', '1 ks, zelená', '180.99', 21, 1),
 (10548, 0, 'Beco Scoop Food', 'Beco Pets', '1 ks, modrá', '131.40', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10549, 0, 'Beco Scoop Food', 'Beco Pets', '1 ks, zelená', '131.40', 21, 1),
 (10550, 0, 'Beco Scoop Food', 'Beco Pets', '1 ks, růžová', '131.40', 21, 1),
 (10551, 0, 'Beco Scoop Litter', 'Beco Pets', '1 ks, modrá', '98.35', 21, 1),
@@ -11287,7 +11160,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (11141, 0, 'Rakytníková péče o vlasy, dárkový set', 'Natura Siberica', '1 ks, (400 ml + 400 ml + 125 ml)', '428.93', 21, 1),
 (11142, 0, 'Pleťová péče, dárkový set', 'Natura Siberica', '1 ks, (150 ml + 200 ml + 75 ml)', '346.28', 21, 1),
 (11143, 0, 'Hydratační tělový sprej, plumérie', 'Pure Fiji', '90 ml', '223.14', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (11144, 0, 'Hypoalergenní krém', 'Nobilis Tilia', '50 ml', '147.93', 21, 1),
 (11145, 0, 'Parfémová voda Čajová zahrada', 'Acorelle', '10 ml, roll-on', '307.44', 21, 4),
 (11146, 0, 'Parfémová voda Lotusový sen', 'Acorelle', '10 ml, roll-on', '307.44', 21, 1),
@@ -11858,7 +11731,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (11711, 0, 'Slupovací maska proti vráskám, Spa Magik Organiks', 'Spa Magik', '30 g', '107.44', 21, 4),
 (11712, 0, 'Svalová terapie, Spa Magik Organiks', 'Spa Magik', '50 ml', '305.79', 21, 1),
 (11713, 0, 'Domácnost bez odpadu, Bea Johnsonová', 'Knihy', '265 stran', '353.64', 10, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (11714, 0, 'Čaj heřmánek a levandule, bio', 'English Tea Shop', '20 g, 20 ks', '69.57', 15, 4),
 (11715, 0, 'Oboustranná tužka na obočí Light', 'Lily Lolo Mineral Cosmetics', '1,5 g', '271.90', 21, 1),
 (11716, 0, 'Oboustranná tužka na obočí Medium', 'Lily Lolo Mineral Cosmetics', '1,5 g', '271.90', 21, 1),
@@ -12445,7 +12318,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (12297, 0, 'Litsea cubeba, Bio', 'Taoasis', '10 ml', '171.07', 21, 4),
 (12298, 0, 'Cedr, Bio', 'Taoasis', '5 ml', '135.54', 21, 4),
 (12299, 0, 'Fenykl', 'Taoasis', '10 ml', '240.50', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (12300, 0, 'Geránium růžové, Bio', 'Taoasis', '5 ml', '271.90', 21, 4),
 (12301, 0, 'Grapefruit, Bio', 'Taoasis', '5 ml', '157.85', 21, 4),
 (12302, 0, 'Kadidlo, Bio', 'Taoasis', '5 ml', '204.13', 21, 10),
@@ -13049,7 +12922,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (12900, 0, 'Balzám na rty Orange Bergamot', 'Crazy Rumors', '4,25 g', '85.95', 21, 1),
 (12901, 0, 'Balzám na rty Pistachio', 'Crazy Rumors', '4,4 ml', '90.08', 21, 4),
 (12902, 0, 'Tónující balzám na rty Sunset', 'Crazy Rumors', '4,4 ml', '123.14', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (12903, 0, 'Tónující balzám na rty Breeze', 'Crazy Rumors', '4,4 ml', '123.14', 21, 4),
 (12904, 0, 'Tónující balzám na rty Pearl', 'Crazy Rumors', '4,4 ml', '123.14', 21, 4),
 (12905, 0, 'Rakytníkový krém na ruce výživný', 'Natura Siberica', '30 ml', '37.19', 21, 4),
@@ -13642,7 +13515,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (13492, 0, 'Mini Pure Konjac Zelený jíl, Deštný prales', 'The Konjac Sponge Company', '1 ks', '177.69', 21, 0),
 (13493, 0, 'Mini Pure Konjac Aktivní dřevěné uhlí, Deštný prales', 'The Konjac Sponge Company', '1 ks', '177.69', 21, 0),
 (13494, 0, 'Pure Konjac, Mytické bytosti', 'The Konjac Sponge Company', '1 ks', '285.12', 21, 0);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (13495, 0, 'Pure Konjac Aktivní uhlí, Mytické bytosti', 'The Konjac Sponge Company', '1 ks', '285.12', 21, 0),
 (13496, 0, 'Pure Konjac Zelený jíl, Mytické bytosti', 'The Konjac Sponge Company', '1 ks', '285.12', 21, 0),
 (13497, 0, 'Pure Konjac Červený jíl, Mytické bytosti', 'The Konjac Sponge Company', '1 ks', '285.12', 21, 0),
@@ -13693,7 +13566,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (13542, 0, 'Parfémová voda Le F', 'Florascent', '30 ml', '1069.42', 21, 1),
 (13543, 0, 'Parfémová voda Le Gantier', 'Florascent', '30 ml', '1069.42', 21, 1),
 (13544, 0, 'Parfémová voda Olong', 'Florascent', '30 ml', '1069.42', 21, 1),
-(13545, 0, 'Parfémová voda Patch`Noir', 'Florascent', '30 ml', '1069.42', 21, 1),
+(13545, 0, 'Parfémová voda PatchNoir', 'Florascent', '30 ml', '1069.42', 21, 1),
 (13546, 0, 'Parfémová voda Soflora', 'Florascent', '30 ml', '1069.42', 21, 1),
 (13547, 0, 'Parfémová voda WABI', 'Florascent', '30 ml', '1069.42', 21, 1),
 (13548, 0, 'Parfémová voda Quarzazate', 'Florascent', '30 ml', '1069.42', 21, 1),
@@ -14210,7 +14083,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (14059, 0, 'Krém opalovací SPF 50 pro děti, Sun Sensitive', 'Lavera', '75 ml', '164.46', 21, 1),
 (14060, 0, 'Čaj ayurvédský Feel New, bio', 'Pukka', '40 g, 20 ks', '114.78', 15, 4),
 (14061, 0, 'Mléko po opalování, Aloe vera', 'Lavera', '200 ml', '172.73', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (14062, 0, 'Samoopalovací mléko tělové, Sun Sensitiv', 'Lavera', '150 ml', '255.37', 21, 1),
 (14063, 0, 'Bambusové mezizubní kartáčky velikost 4 (0,7 mm)', 'Humble Brush', '6 ks', '106.61', 21, 4),
 (14064, 0, 'Samoopalovací krém pleťový, Sun Sensitiv', 'Lavera', '50 ml', '197.52', 21, 1),
@@ -14766,7 +14639,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (14614, 0, 'Coslys Kojenecký hydratační krém na obličej i tělo, Bébé', 'BiOOO - Testery', '1ks', '0.83', 21, 7),
 (14615, 0, 'Coslys Kojenecký krém proti opruzeninám meruňka, Bébé', 'BiOOO - Testery', '1ks', '0.83', 21, 7),
 (14616, 0, 'Coslys Kojenecký čisticí gel na tělo i vlasy, Bébé', 'BiOOO - Testery', '1ks', '0.83', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (14617, 0, 'Coslys Krém na ruce citron a levandule', 'BiOOO - Testery', '1ks', '0.83', 21, 7),
 (14618, 0, 'Coslys Krém na ruce sladká mandle', 'BiOOO - Testery', '1ks', '0.83', 21, 7),
 (14619, 0, 'Coslys Krém pro muže, Homme Bio', 'BiOOO - Testery', '1ks', '0.83', 21, 7),
@@ -15332,7 +15205,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (15179, 0, 'Novinky, světle modrá', 'BiOOO cedule', '1 ks, nízký regál', '0.83', 21, 7),
 (15180, 0, 'Slevy, červená', 'BiOOO cedule', '1 ks, vysoký regál', '0.83', 21, 7),
 (15181, 0, 'Slevy, červená', 'BiOOO cedule', '1 ks, nízký regál', '0.83', 21, 7);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (15182, 0, 'Bonus klub, bílá, zelený text', 'BiOOO cedule', '1 ks, vysoký regál', '0.83', 21, 7),
 (15183, 0, 'Bonus klub, bílá, zelený text', 'BiOOO cedule', '1 ks, nízký regál', '0.83', 21, 7),
 (15184, 0, 'Dobrý skutek, růžová', 'BiOOO cedule', '1 ks, vysoký regál', '0.83', 21, 7),
@@ -15900,7 +15773,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (15746, 0, 'Vánoční sada červené Vánoce', 'English Tea Shop', '1 ks sada, 60 kusů', '217.39', 15, 1),
 (15747, 0, 'Intenzivní pleťová kúra, Extroderm', 'Dado Sens', '14 ml', '271.90', 21, 5),
 (15748, 0, 'Koloidní stříbro 15 ppm', 'Lakshmi - Narayan', '100 ml', '139.67', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (15749, 0, 'TESTER Vyhlazující hydratační denní krém Light, Aquanature', 'Annemarie Börlind', '1 ks', '0.83', 21, 7),
 (15750, 0, 'TESTER Revitalizační hydratační sérum, Aquanature', 'Annemarie Börlind', '1 ks', '0.83', 21, 7),
 (15751, 0, 'TESTER Revitalizační denní krém, Energynature', 'Annemarie Börlind', '1 ks', '0.83', 21, 7),
@@ -16471,7 +16344,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (16316, 0, 'TESTER Kompaktní pudr, Beige Doré 03', 'Boho Green Make-Up', '1 ks', '0.83', 21, 7),
 (16317, 0, 'TESTER Korektor Beige Clair 02', 'Boho Green Make-Up', '1 ks', '0.83', 21, 7),
 (16318, 0, 'TESTER Korektor Beige Diaphane 01', 'Boho Green Make-Up', '1 ks', '0.83', 21, 7);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (16319, 0, 'TESTER Korektor Beige Doré 03', 'Boho Green Make-Up', '1 ks', '0.83', 21, 7),
 (16320, 0, 'TESTER Korektor Orange 07', 'Boho Green Make-Up', '1 ks', '0.83', 21, 7),
 (16321, 0, 'TESTER Korektor Vert 05', 'Boho Green Make-Up', '1 ks', '0.83', 21, 7),
@@ -17038,7 +16911,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (16882, 0, 'Difuzér Sweet Senses', 'We Love The Planet', '50 ml', '533.06', 21, 1),
 (16883, 0, 'Difuzér Darjeeling Delight', 'We Love The Planet', '50 ml', '533.06', 21, 1),
 (16884, 0, 'Přírodní krémový deodorant, So Sensitive', 'We Love The Planet', '48 g', '230.58', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (16885, 0, 'Přírodní opalovací krém v tyčince SPF 20', 'We Love The Planet', '50 g', '495.87', 21, 4),
 (16886, 0, 'Přírodní opalovací krém v tyčince SPF 30', 'We Love The Planet', '50 g', '545.45', 21, 4),
 (16887, 0, 'Denní regenerační krém Bio Damascena', 'Alteya Organics', '50 ml', '557.85', 21, 4),
@@ -17595,7 +17468,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (17438, 0, 'TESTER Hedvábný minerální make-up 509 Sand beige', 'ZAO', '15 g bambusový obal', '0.83', 21, 7),
 (17439, 0, 'TESTER Extra matná rtěnka 431', 'ZAO', '3,5 g bambusový obal', '0.83', 21, 7),
 (17440, 0, 'TESTER Make-up tužka na oči a obočí 613 Blond Eyebrow', 'ZAO', '1,17 g', '0.83', 21, 7);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (17441, 0, 'TESTER Make-up tužka na oči a obočí 602 Dark Brown', 'ZAO', '1,17 g', '0.83', 21, 7),
 (17442, 0, 'TESTER Make-up tužka na oči a obočí 601 Black', 'ZAO', '1,17 g', '0.83', 21, 7),
 (17443, 0, 'TESTER Korektor 493 Brown Pink', 'ZAO', '3,5 g bambusový obal', '0.83', 21, 7),
@@ -18146,7 +18019,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (18014, 0, 'TESTER Korektor plně krycí, Nutmeg', 'Inika Organic', '3,5 g', '0.83', 21, 7),
 (18015, 0, 'TESTER Matující transparentní pudr', 'Inika Organic', '3,5 g', '0.83', 21, 7),
 (18016, 0, 'TESTER Sypký minerální bronzer, Sunlight', 'Inika Organic', '3,5 g', '0.83', 21, 7);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (18017, 0, 'TESTER Sypký minerální bronzer, Sunkissed', 'Inika Organic', '3,5 g', '0.83', 21, 7),
 (18018, 0, 'TESTER Minerální tvářenka s aplikátorem, Rosy Glow', 'Inika Organic', '3 g', '0.83', 21, 7),
 (18019, 0, 'TESTER Sypká minerální tvářenka, Blooming Nude', 'Inika Organic', '3 g', '0.83', 21, 7),
@@ -18736,7 +18609,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (18603, 0, 'Přírodní sypký minerální pudrový make-up s SPF 25, Strength', 'Inika Organic', '0,7 g', '32.23', 21, 5),
 (18604, 0, 'Přírodní sypký minerální pudrový make-up s SPF 25, Unity', 'Inika Organic', '0,7 g', '78.51', 21, 1),
 (18605, 0, 'Přírodní sypký minerální pudrový make-up s SPF 25, Nurture', 'Inika Organic', '0,7 g', '32.23', 21, 5);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (18606, 0, 'Přírodní sypký minerální pudrový make-up s SPF 25, Patience', 'Inika Organic', '0,7 g', '32.23', 21, 5),
 (18607, 0, 'Přírodní sypký minerální pudrový make-up s SPF 25, Trust', 'Inika Organic', '0,7 g', '32.23', 21, 5),
 (18608, 0, 'Přírodní sypký minerální pudrový make-up s SPF 25, Freedom', 'Inika Organic', '0,7 g', '32.23', 21, 5),
@@ -19302,7 +19175,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (19168, 0, 'Rich Nutrition Kokosové tělové máslo natural', 'OSTE', '100 ml', '471.07', 21, 4),
 (19169, 0, 'Rich Nutrition Kokosové tělové máslo extra kokos', 'OSTE', '100 ml', '471.07', 21, 4),
 (19170, 0, 'Intensive treatment Kokosová maska na vlasy extra kokos', 'OSTE', '200 ml', '801.65', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (19171, 0, 'Soft touch Kokosový krém na ruce natural', 'OSTE', '60 ml', '223.14', 21, 10),
 (19172, 0, 'Soft touch Kokosový krém na ruce extra kokos', 'OSTE', '60 ml', '223.14', 21, 4),
 (19173, 0, 'Sweet care Kokosový balzám na rty natural', 'OSTE', '15 ml', '223.14', 21, 4),
@@ -19872,7 +19745,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (19773, 0, 'Dětské špaldové mini suchary', 'Holle', '100 g', '69.57', 15, 4),
 (19774, 0, 'Dětské špaldové keksy', 'Holle', '150 g', '100.00', 15, 4),
 (19775, 0, 'Dětské keksy jablko hruška', 'Holle', '125 g', '100.00', 15, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (19776, 0, 'Bio dětská mléčná výživa 1 počáteční', 'Holle', '400 g', '217.27', 10, 4),
 (19777, 0, 'Bio dětská mléčná výživa 2 pokračovací', 'Holle', '600 g', '299.09', 10, 4),
 (19778, 0, 'Bio dětská mléčná výživa 3 pokračovací', 'Holle', '600 g', '299.09', 10, 4),
@@ -20469,7 +20342,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (20369, 0, 'Med květový', 'Včelařství Balaštík', '200 g', '68.70', 15, 10),
 (20370, 0, 'Medové víno, přírodní', 'Včelařství Balaštík', '200 ml', '81.82', 21, 4),
 (20371, 0, 'Dárkové balení medu', 'Včelařství Balaštík', '3 x 200 g', '277.39', 15, 10);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (20372, 0, 'Svíčka ze včelího vosku', 'Včelařství Balaštík', '70 g', '57.02', 21, 4),
 (20373, 0, 'Plovoucí svíčka ze včelího vosku', 'Včelařství Balaštík', '4 ks', '106.61', 21, 4),
 (20374, 0, 'Plovoucí svíčka ze včelího vosku', 'Včelařství Balaštík', '9 ks', '214.05', 21, 4),
@@ -21048,7 +20921,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (20963, 0, 'Perleťové oční stíny 125 Sunshiny pink', 'ZAO', '1,3 g náplň', '131.40', 21, 4),
 (20964, 0, 'Perleťové oční stíny 126 Golden petal', 'ZAO', '1,3 g náplň', '131.40', 21, 4),
 (20965, 0, 'Perleťové oční stíny 127 Peacock blue', 'ZAO', '1,3 g náplň', '131.40', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (20966, 0, 'Perleťové oční stíny 128 Tiramisu', 'ZAO', '1,3 g náplň', '131.40', 21, 4),
 (20967, 0, 'Perleťové oční stíny 129 Taupe', 'ZAO', '1,3 g náplň', '131.40', 21, 4),
 (20968, 0, 'Perleťové oční stíny 130 Intense Brown', 'ZAO', '1,3 g náplň', '131.40', 21, 4),
@@ -21644,7 +21517,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (21558, 0, 'Řeřicha bio', 'Sonnentor', '120 g', '78.26', 15, 4),
 (21559, 0, 'Klíčivý mix bio', 'Sonnentor', '120 g', '60.87', 15, 4),
 (21560, 0, 'Mungo bio', 'Sonnentor', '120 g', '60.87', 15, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (21561, 0, 'Káva Vídeňské pokušení Espresso bio zrnková', 'Sonnentor', '500 g', '295.65', 15, 4),
 (21562, 0, 'Zelená káva bio', 'Sonnentor', '54 g, 18 KS', '78.26', 15, 4),
 (21563, 0, 'Káva Single Origin Nicaragua BIO, zrnková', 'Sonnentor', '250 g', '234.78', 15, 4),
@@ -22219,7 +22092,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (22132, 0, 'BIO Čisticí gel kořeněný pomeranč', 'Urtekram', '150 ml', '194.21', 21, 4),
 (22133, 0, 'BIO Kondicionér divoká růže', 'Urtekram', '180 ml', '147.93', 21, 4),
 (22134, 0, 'BIO Krém na ruce divoká růže', 'Urtekram', '75 ml', '136.36', 21, 10);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (22135, 0, 'BIO Sprchový gel divoká růže', 'Urtekram', '200 ml', '128.10', 21, 4),
 (22136, 0, 'BIO Šampon divoká růže', 'Urtekram', '250 ml', '152.89', 21, 4),
 (22137, 0, 'BIO Šampon divoká růže', 'Urtekram', '500 ml', '260.33', 21, 4),
@@ -22806,7 +22679,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10000029, 0, 'Dětské plenky Mini 2-6 kg', 'Nappynat', '26 ks', '185.95', 21, 1),
 (10000030, 248, 'Růžová voda, bio', 'Purity Vision', '250 ml', '173.22', 15, 1),
 (10000031, 247, 'Tělové mléko růžové', 'Urtekram', '245 ml', '165.00', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10000032, 0, 'Tělové máslo, karambola', 'Pure Fiji', '15 ml', '52.00', 21, 1),
 (10000033, 0, 'Tělové máslo, karambola', 'Pure Fiji', '15 ml', '52.00', 21, 1),
 (10000034, 0, 'Rtěnka 08 Purple', 'puroBIO cosmetics', '3,5 g', '212.00', 21, 1),
@@ -23380,7 +23253,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10000604, 1239, 'Jinanová tinktura', 'Nobilis Tilia', '50 ml', '94.00', 21, 1),
 (10000605, 0, 'RE:GENE omlazující sada', 'MÁDARA', '1 ks, (60 ml + 2 x 20 ml + 3 ml)', '682.07', 21, 1),
 (10000606, 0, 'Tužka na oči 01 černá, Trend Sensitiv', 'Lavera', '1,14 g', '58.76', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10000607, 0, 'Pudr třpytivý bronzující DUO 02 sluneční polibek, Trend Sensitiv', 'Lavera', '9 g', '155.62', 21, 1),
 (10000608, 0, 'Ájurvédský práškový šampon Citrus-Guarana, Bio', 'Eliah Sahil Organic', '100 g', '269.05', 21, 1),
 (10000609, 0, 'Malinový olej, bio', 'Saloos', '20 ml', '128.26', 21, 1),
@@ -23961,7 +23834,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10001188, 0, 'Obnovující sada Levandule', 'Nobilis Tilia', '3x20 ml', '575.04', 21, 1),
 (10001189, 0, 'Datlové cukroví s acai, Bio', 'Govinda', '120 g', '48.35', 15, 1),
 (10001190, 0, 'Datlové cukroví s acai, Bio', 'Govinda', '120 g', '48.35', 15, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10001191, 0, 'Sada pro intenzivní obnovu vlasů', 'Natura Siberica', '1 sada (250ml + 250 ml + 125 ml)', '308.00', 21, 1),
 (10001192, 401, 'Čaj Tulsi Brahmi, porcovaný, bio', 'Organic India', '43,5 g, 25 ks', '92.35', 15, 1),
 (10001193, 0, 'Ájurvédský práškový šampon Citrus-Guarana, Bio', 'Eliah Sahil Organic', '250 g, náplň', '484.22', 21, 1),
@@ -24524,7 +24397,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10001752, 0, 'Pleťové mléko, Young & Active', 'Martina Gebhardt', '100 ml', '270.74', 21, 9),
 (10001753, 0, 'Pleťové mléko, Young & Active', 'Martina Gebhardt', '100 ml', '270.74', 21, 9),
 (10001754, 0, 'Pleťové mléko, Young & Active', 'Martina Gebhardt', '100 ml', '270.74', 21, 9);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10001755, 400, 'Ženšenové čisticí mléko, Ginseng', 'Martina Gebhardt', '150 ml', '265.29', 21, 1),
 (10001756, 0, 'Přírodní krémový deodorant s vůní levandule', 'RaE', '15 ml náplň', '53.56', 21, 1),
 (10001757, 316, 'Dětský balzám, Calendula', 'Martina Gebhardt', '50 ml', '200.00', 21, 9),
@@ -25093,7 +24966,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10002329, 0, 'Krém na opalování SPF 30', 'Weleda', '50 ml', '65.95', 21, 1),
 (10002330, 0, 'Výživný denní krém s antioxidanty, Youth Defence', 'MOSSA', '50 ml', '259.59', 21, 1),
 (10002331, 0, 'Výživný denní krém s antioxidanty, Youth Defence', 'MOSSA', '50 ml', '259.59', 21, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10002332, 0, 'Výživný denní krém s antioxidanty, Youth Defence', 'MOSSA', '50 ml', '259.59', 21, 1),
 (10002333, 0, 'Cassia Obovata', 'VOONO', '100 g', '160.87', 21, 1),
 (10002334, 0, 'Cassia Obovata', 'VOONO', '100 g', '160.87', 21, 1),
@@ -25659,7 +25532,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10002913, 0, 'Zeštíhlující oleogel Mořské řasy, Exspirace ', 'Original ATOK', '200 ml', '309.42', 21, 9),
 (10002914, 236, 'Rose růžové tělové mléko, Exspirace ', 'Martina Gebhardt', '150 ml', '416.53', 21, 9),
 (10002915, 0, 'Tropicup L, černá, Poškozeno', 'TROPIKALIA', '355 ml', '296.86', 21, 9);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10002916, 0, 'Sušenky citronové s čajem Matcha, bio', 'Biscuiterie de l\'Abbaye', '120 g', '39.57', 15, 1),
 (10002917, 0, 'Těhotenský olej Poupátko, Exspirace ', 'Nobilis Tilia', '200 ml', '296.78', 21, 1),
 (10002918, 0, 'Fun Time Tekuté mýdlo s rooibosem BIO pro děti, Exspirace ', 'PURE BEGINNINGS', '250 ml', '155.04', 21, 9),
@@ -26228,7 +26101,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10003814, 0, 'Tělový a vlasový olej Argan', 'Eliah Sahil Organic', '100 ml', '286.28', 21, 1),
 (10003815, 0, 'Melissa meduňkový krém', 'Martina Gebhardt', '15 ml', '115.00', 21, 1),
 (10003816, 0, 'Gumové bonbóny, Forest fruit', 'Chimpanzee', '30 g', '23.74', 15, 1);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10003817, 0, 'Gumové bonbóny, Forest fruit', 'Chimpanzee', '30 g', '23.74', 15, 1),
 (10003818, 0, 'Gumové bonbóny, Forest fruit', 'Chimpanzee', '30 g', '23.74', 15, 1),
 (10003819, 0, 'Tekutý rozjasňovač, 1-Bronzový', 'Lavera', '30 ml', '197.69', 21, 9),
@@ -26721,7 +26594,7 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10004676, 0, 'Opalovací krém s obsahem rostlinných kmenových buněk a antioxidanty SPF 30, Poškozeno', 'MÁDARA', '100 ml', '371.16', 21, 4),
 (10004677, 0, 'Opalovací krém s obsahem rostlinných kmenových buněk a antioxidanty SPF 30, Poškozeno', 'MÁDARA', '100 ml', '371.16', 21, 4),
 (10004678, 0, 'Opalovací krém s obsahem rostlinných kmenových buněk a antioxidanty SPF 30, Poškozeno', 'MÁDARA', '100 ml', '371.16', 21, 4);
-INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`, `price`, `dph`, `availability`) VALUES
+INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (10004679, 0, 'Opalovací krém s obsahem rostlinných kmenových buněk a antioxidanty SPF 30, Poškozeno', 'MÁDARA', '100 ml', '371.16', 21, 4),
 (10004680, 0, 'Permanentní barva na vlasy oranžová FF6, Poškozeno', 'HERBATINT', '150 ml', '222.40', 21, 4),
 (10004681, 0, 'Smoothie Melts ovocné polštářky z banánu, manga a marakuji', 'KIDDYLICIOUS', '6 g', '25.83', 15, 4),
@@ -26737,52 +26610,3 @@ INSERT INTO `new_products` (`id`, `id_category`, `title`, `author`, `publisher`,
 (10004698, 0, 'Přírodní bublifuk, Poškozeno', 'ecodis', '50 ml', '51.32', 21, 4),
 (10004699, 0, 'Přírodní bublifuk, Poškozeno', 'ecodis', '50 ml', '51.32', 21, 4),
 (10004700, 0, 'Jemný prací gel na vlnu levandule, Poškozeno', 'Etamine du Lys', '3 l', '371.16', 21, 4);
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `new_products`
---
-ALTER TABLE `new_products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `brands_id` (`brands_id`),
-  ADD KEY `availability` (`availability`),
-  ADD KEY `code` (`code`),
-  ADD KEY `flag_update_title` (`flag_update_title`),
-  ADD KEY `isbn` (`isbn`),
-  ADD KEY `pro_order_koef` (`pro_order_koef`),
-  ADD KEY `pro_availability_datetime_change` (`pro_availability_datetime_change`),
-  ADD KEY `pro_first_activation_datetime` (`pro_first_activation_datetime`),
-  ADD KEY `pro_turnover` (`pro_turnover`),
-  ADD KEY `pro_monthly_sales_quantity` (`pro_monthly_sales_quantity`),
-  ADD KEY `pro_store_in_box_insert` (`pro_store_in_box_insert`),
-  ADD KEY `abra_quantity` (`abra_quantity`),
-  ADD KEY `pro_sales_koef` (`pro_sales_koef`),
-  ADD KEY `pro_inventory_turnover` (`pro_inventory_turnover`),
-  ADD KEY `pro_prefix_id` (`pro_prefix_id`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `original_name` (`original_name`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `title` (`title`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `descr` (`descr`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `publisher` (`publisher`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `author` (`author`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `usage` (`usage`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `fts_texts` (`title`,`author`,`keywords`,`descr`,`pro_quick_search_string`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `keywords` (`keywords`);
-ALTER TABLE `new_products` ADD FULLTEXT KEY `fts_texts_v2` (`title`,`author`,`keywords`,`descr`,`publisher`,`pro_quick_search_string`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `new_products`
---
-ALTER TABLE `new_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10004701;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

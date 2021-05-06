@@ -1,44 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
---
--- Хост: localhost
--- Время создания: Апр 17 2021 г., 15:24
--- Версия сервера: 10.1.44-MariaDB-0+deb9u1
--- Версия PHP: 5.6.37-1+0~20180725093819.2+stretch~1.gbp606419
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- База данных: `biooo_cz_www`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `new_products_category`
---
-
-CREATE TABLE `new_products_category` (
-  `id_products` int(11) NOT NULL,
-  `id_category` int(11) NOT NULL,
-  `level` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `new_products_category`
---
-
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (0, 1374, 0),
 (1, 1381, 0),
 (2, 157, 0),
@@ -3602,7 +3562,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (3531, 1377, 0),
 (3532, 133, 0),
 (3533, 1389, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (3534, 1387, 0),
 (3535, 1370, 0),
 (3536, 170, 0),
@@ -7095,7 +7055,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (6344, 190, 0),
 (6345, 190, 0),
 (6346, 190, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (6347, 190, 0),
 (6347, 1818, 0),
 (6348, 356, 0),
@@ -10561,7 +10521,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (9196, 58, 0),
 (9196, 1812, 0),
 (9197, 1688, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (9198, 179, 0),
 (9198, 1817, 0),
 (9199, 393, 0),
@@ -13875,7 +13835,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (11567, 1356, 0),
 (11567, 1592, 0),
 (11568, 1356, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (11568, 1592, 0),
 (11569, 1356, 0),
 (11569, 1592, 0),
@@ -17085,7 +17045,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (13974, 150, 0),
 (13975, 79, 0),
 (13975, 1778, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (13975, 1852, 0),
 (13976, 113, 0),
 (13976, 1761, 0),
@@ -20249,7 +20209,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (16702, 171, 0),
 (16702, 1841, 0),
 (16703, 171, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (16703, 1841, 0),
 (16704, 1834, 0),
 (16704, 1994, 0),
@@ -23417,7 +23377,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (19601, 1387, 0),
 (19601, 1782, 0),
 (19602, 1416, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (19602, 1785, 0),
 (19603, 1391, 0),
 (19605, 1414, 0),
@@ -26578,7 +26538,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (22534, 1849, 0),
 (22535, 1849, 0),
 (22536, 1849, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (22537, 1849, 0),
 (22538, 1777, 0),
 (22539, 1777, 0),
@@ -29290,7 +29250,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (10001661, 158, 0),
 (10001661, 1370, 0),
 (10001661, 1416, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (10001662, 1370, 0),
 (10001663, 88, 0),
 (10001663, 130, 0),
@@ -31976,7 +31936,7 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (10004137, 1378, 0),
 (10004138, 113, 0),
 (10004138, 1761, 0);
-INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALUES
+INSERT INTO product_category (id_products, id_category, level) VALUES
 (10004139, 1997, 0),
 (10004140, 155, 0),
 (10004140, 1834, 0),
@@ -32580,20 +32540,3 @@ INSERT INTO `new_products_category` (`id_products`, `id_category`, `level`) VALU
 (10004699, 2051, 0),
 (10004700, 326, 0),
 (10004700, 2051, 0);
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `new_products_category`
---
-ALTER TABLE `new_products_category`
-  ADD PRIMARY KEY (`id_products`,`id_category`),
-  ADD KEY `id_products` (`id_products`),
-  ADD KEY `id_category` (`id_category`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
