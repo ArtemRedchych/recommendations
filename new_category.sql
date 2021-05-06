@@ -1,4 +1,4 @@
-INSERT INTO `category` (`id`, `subcategory`, `title`, `description`, `active`, `cat_link_to_category_id`) VALUES
+INSERT INTO category (id, subcategory, title, description, active, cat_link_to_category_id) VALUES
 (1, 1241, 'Péče o vlasy', 'Pokožka těla je největším absorpčním orgánem a je třeba jí věnovat zvláštní pozornost. Přijďte se podívat na naši nabídku. Určitě si vyberete.', 1, NULL),
 (2, 1250, 'Přírodní sladidla', 'Klasický bílý cukr se označuje jako bílý jed a vhodné nejsou ani přírodní či bio třetinové varianty. Nejlepší je využít na slazení sladidla z přírody - například stévii nebo některé druhy koření, jako je kardamom či anýz.', 1, NULL),
 (3, 1538, 'Lůžkoviny', '', 0, NULL),
