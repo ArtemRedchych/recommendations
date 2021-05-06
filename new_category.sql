@@ -455,7 +455,7 @@ INSERT INTO category (id, subcategory, title, description, active, cat_link_to_c
 (1331, 1538, 'Doplňky stravy pro zlepšení zraku', 'Podporu a prevenci zraku můžeme posílit přípravky tradiční čínské medicíny, ájurvédy, staroruské medicíny či doplňky stravy s výtažky z bylin.', 0, NULL),
 (1332, 1538, 'Aloe vera šťáva', 'Aloe vera je pověstná nejen svými regeneračními účinky, které má při kosmetickém použití, ale také léčivými a blahodárnými účinky, které má při konzumaci.', 0, NULL),
 (1333, 1538, 'Ostatní šťávy a sirupy', 'Přírodní šťávy a sirupy v bio kvalitě představují koncentrát účinných látek jednotlivých léčivých rostlin a plodů, které obsahují velké množství vitaminů a dalších prospěšných látek. ', 0, NULL);
-INSERT INTO `new_category` (`id`, `subcategory`, `title`, `description`, `active`, `cat_link_to_category_id`) VALUES
+INSERT INTO category (id, subcategory, title, description, active, cat_link_to_category_id) VALUES
 (1334, 1538, 'Rakytníková šťáva', 'Plod rakytníku obsahuje velké množství vitaminů, C, D, E, K a komplex B vitaminů. Díky tomu velmi prospěšně působí na organismus, posiluje jeho obranyschopnost a pomáhá předcházet nachlazení.', 0, NULL),
 (1335, 11, 'Psychika', '', 0, NULL),
 (1336, 1538, 'Opalovací přípravky na obličej', 'Přírodní opalovací pleťové krémy jsou dostatečně jemné i pro citlivou pleť, díky přírodnímu složení poskytují i nadstandardní péči o pleť a navíc díky minerálním filtrům ochrání pleť před poškozením.', 0, NULL),
@@ -877,7 +877,7 @@ INSERT INTO `new_category` (`id`, `subcategory`, `title`, `description`, `active
 (1757, 1538, 'Dárkové sady', '', 0, NULL),
 (1758, 1755, 'Čaje a cukrovinky', '', 0, NULL),
 (1759, 1538, 'Čokolády a zdravé sladkosti', 'Čokolády z kvalitních surovin a zdravé sladkosti určitě potěší jako drobný vánoční dárek.', 0, NULL);
-INSERT INTO `new_category` (`id`, `subcategory`, `title`, `description`, `active`, `cat_link_to_category_id`) VALUES
+INSERT INTO category (id, subcategory, title, description, active, cat_link_to_category_id) VALUES
 (1760, 1755, 'Přípravky do koupele', 'Přísady do koupele, soli i koule do koupele jsou skvělým vánočním dárkem, který potěší bez rozdílu pohlaví a napříč generacemi.', 0, NULL),
 (1761, 1755, 'Vánoční atmosféra', '', 0, NULL),
 (1762, 1755, 'Vůně a parfémy', '', 0, NULL),
