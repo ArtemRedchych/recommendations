@@ -1,4 +1,5 @@
-ALTER TABLE products DISABLE TRIGGER ALL;
+alter table products drop constraint products_id_category_foreign;
+
 INSERT INTO products (id, id_category, title, author, publisher, price, dph, availability) VALUES
 (1, 248, 'Pleťová voda Hydro-Performance', 'I+M Naturkosmetik', '150 ml', '329.75', 21, 1),
 (2, 354, 'Kondicionér Freistil', 'I+M Naturkosmetik', '200 ml', '296.69', 21, 1),
@@ -26613,3 +26614,4 @@ INSERT INTO products (id, id_category, title, author, publisher, price, dph, ava
 (10004700, 0, 'Jemný prací gel na vlnu levandule, Poškozeno', 'Etamine du Lys', '3 l', '371.16', 21, 4);
 
 ALTER TABLE products ENABLE TRIGGER ALL;
+alter table products add constraint products_id_category_foreign foreign key (id_category) references category(id);
