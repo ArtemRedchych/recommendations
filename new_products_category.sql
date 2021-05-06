@@ -1,3 +1,5 @@
+ALTER TABLE product_category DISABLE TRIGGER ALL;
+
 INSERT INTO product_category (id_products, id_category, level) VALUES
 (0, 1374, 0),
 (1, 1381, 0),
@@ -32540,3 +32542,5 @@ INSERT INTO product_category (id_products, id_category, level) VALUES
 (10004699, 2051, 0),
 (10004700, 326, 0),
 (10004700, 2051, 0);
+
+ALTER TABLE product_category ENABLE TRIGGER ALL;
