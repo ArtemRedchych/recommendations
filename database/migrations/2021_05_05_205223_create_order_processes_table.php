@@ -19,8 +19,6 @@ class CreateOrderProcessesTable extends Migration
             $table->string('created',20)->nullable();
             $table->double('final_price', 15, 8)->nullable()->default(0);
 
-            //$table->foreign('id_customers')->references('id')->on('custommers');
-            $table->dropForeign('id_customers');
             $table->primary('number_order');
         });
     }

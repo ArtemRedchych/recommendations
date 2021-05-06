@@ -32544,5 +32544,3 @@ INSERT INTO product_category (id_products, id_category, level) VALUES
 (10004700, 326, 0),
 (10004700, 2051, 0);
 
-alter table product_category add constraint product_category_id_category_foreign foreign key (id_category) references category(id);
-alter table product_category add constraint product_category_id_products_foreign foreign key (id_products) references products(id);

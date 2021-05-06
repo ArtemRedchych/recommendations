@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('availability');
 
             $table->primary('id');
-            $table->foreign('id_category')->references('id')->on('category');
+           // $table->foreign('id_category')->references('id')->on('category');
 
         });
     }

@@ -18,8 +18,8 @@ class CreateProductCategoryTable extends Migration
             $table->bigInteger('id_category');
             $table->bigInteger('level');
 
-            $table->foreign('id_products')->references('id')->on('products');
-            $table->foreign('id_category')->references('id')->on('category');
+            //$table->foreign('id_products')->references('id')->on('products');
+           // $table->foreign('id_category')->references('id')->on('category');
 
         });
     }

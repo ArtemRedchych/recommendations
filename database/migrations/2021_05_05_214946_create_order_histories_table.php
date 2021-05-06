@@ -19,8 +19,8 @@ class CreateOrderHistoriesTable extends Migration
             $table->bigInteger('amount');
             $table->double('orderpricedph', 15, 8)->nullable()->default(0);
 
-            $table->foreign('number_order')->references('number_order')->on('order_processes');
-            $table->foreign('id_products')->references('id')->on('products');
+            //$table->foreign('number_order')->references('number_order')->on('order_processes');
+            //$table->foreign('id_products')->references('id')->on('products');
         });
     }
 
