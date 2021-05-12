@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 Route::resources([
-    'users_list' => UsersList::class,
+    'users' => UsersList::class,
     //'posts' => PostController::class,
 ]);

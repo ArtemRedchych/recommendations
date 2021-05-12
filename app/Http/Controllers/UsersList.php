@@ -36,9 +36,17 @@ class UsersList extends Controller
 
         "
         );
-        dd($users);
+        /*dd($users);
+        $users = array(
+            array('custommer_id' => 1, "order" => 12),
+            array('custommer_id' => 2, "order" => 32),
+            array('custommer_id' => 3, "order" => 1),
+            array('custommer_id' => 4, "order" => 55),
+            array('custommer_id' => 5, "order" => 22),
+            array('custommer_id' => 6, "order" => 33),
+        );*/
         //var_dump($users);
-        $users = "dasdasda";
+       // $users = "dasdasda";
         return view('users_list')->with('users', $users);
     }
 
@@ -72,6 +80,7 @@ class UsersList extends Controller
     public function show($id)
     {
         //
+        return view('user_detail')->with('user_id', $id);
     }
 
     /**
