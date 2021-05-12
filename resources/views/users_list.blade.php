@@ -20,11 +20,11 @@
                                         <tbody>
                                                 @foreach ($users as $user)
                                                         <tr>
-                                                                <th scope="row">{{$user['custommer_id']}}</th>
-                                                                <td>User_{{$user['custommer_id']}}</td>
-                                                                <td>{{$user['order']}}</td>
+                                                                <th scope="row">{{$user->custommer_id}}</th>
+                                                                <td>User_{{$user->custommer_id}}</td>
+                                                                <td>{{$user->order}}</td>
                                                                 <td>
-                                                                        <a href="{{route('users.show', $user['custommer_id'])}}" class="btn btn-primary">Detail</a>
+                                                                        <a href="{{route('users.show', $user->custommer_id)}}" class="btn btn-primary">Detail</a>
                                                                 </td>
                                                       </tr> 
                                                 @endforeach
