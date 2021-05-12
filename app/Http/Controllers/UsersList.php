@@ -22,9 +22,11 @@ class UsersList extends Controller
                 cus.id as custommer_id
                 ,COUNT(op.number_order) as order
     
-            FROM custommers as cus WHERE cus.id != 46213
+            FROM custommers as cus
 
             LEFT JOIN order_processes as op ON  cus.id = op.id_customers
+            
+            WHERE cus.id != 46213
 
             GROUP BY cus.id
         ) AS test
