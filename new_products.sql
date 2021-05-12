@@ -26613,5 +26613,4 @@ INSERT INTO products (id, id_category, title, author, publisher, price, dph, ava
 (10004699, 0, 'Přírodní bublifuk, Poškozeno', 'ecodis', '50 ml', '51.32', 21, 4),
 (10004700, 0, 'Jemný prací gel na vlnu levandule, Poškozeno', 'Etamine du Lys', '3 l', '371.16', 21, 4);
 
-ALTER TABLE products ENABLE TRIGGER ALL;
 alter table products add constraint products_id_category_foreign foreign key (id_category) references category(id);
