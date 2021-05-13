@@ -110,12 +110,12 @@ class UsersList extends Controller
                 array_push($categories_queue, $prod_cat->id);
             }
             //for each category find parent ant add to the list
-            print_r("Before");
-            print_r($categories_queue);
+            var_dump("Before");
+            var_dump($categories_queue);
             while(count($categories_queue)){
-                print_r("Inside WHILE");
-                print_r($categories_queue);
-                print_r("current_cat_id = ". $current_cat_id);
+                var_dump("Inside WHILE");
+                var_dump($categories_queue);
+                var_dump("current_cat_id = ". $current_cat_id);
                 $current_cat_id = end($categories_queue);
 
                 //find current category parent category
@@ -127,8 +127,8 @@ class UsersList extends Controller
                 foreach($parent_categories as $par_cats){
                     //current category doesn't have parent category OR it alreaty is in the list
                     if($par_cats->subcategory == 0 || array_key_exists($par_cats->subcategory, $prod_categories)){
-                        print_r("already in array " . $par_cats->subcategory);
-                        print_r($prod_categories);
+                        var_dump("already in array " . $par_cats->subcategory);
+                        var_dump($prod_categories);
                         continue;
                     }
 
@@ -148,7 +148,7 @@ class UsersList extends Controller
             
         }
 
-        print_r($products_arr);
+        var_dump($products_arr);
 
         return view('user_detail')->with('user_id', $id);
     }
