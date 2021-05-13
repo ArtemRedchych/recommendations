@@ -81,6 +81,13 @@ class UsersList extends Controller
     public function show($id)
     {
         //2920
+        $all_categories_std = DB::select('select id, title from category');
+        $all_categories = array();
+        foreach($all_categories_std as $category){
+            $all_categories[$category->id] = $category->title;
+        }
+
+
         $products_std = DB::select("
         SELECT p.id, p.title, p.author FROM order_processes AS op
 
@@ -110,15 +117,9 @@ class UsersList extends Controller
                 array_push($categories_queue, $prod_cat->id);
             }
             //for each category find parent ant add to the list
-            var_dump("Before");
-            var_dump($categories_queue);
             while(count($categories_queue)){
-                var_dump("Inside WHILE");
-                var_dump($categories_queue);
-                
                 $current_cat_id = end($categories_queue);
                 array_pop($categories_queue);
-                var_dump("current_cat_id = ". $current_cat_id);
                 //find current category parent category
                 $parent_categories = DB::select("
                     SELECT cat.subcategory FROM category AS cat WHERE cat.id = ?
@@ -128,8 +129,6 @@ class UsersList extends Controller
                 foreach($parent_categories as $par_cats){
                     //current category doesn't have parent category OR it alreaty is in the list
                     if($par_cats->subcategory == 0 || array_key_exists($par_cats->subcategory, $prod_categories)){
-                        var_dump("already in array " . $par_cats->subcategory);
-                        var_dump($prod_categories);
                         continue;
                     }
 
@@ -149,9 +148,9 @@ class UsersList extends Controller
             
         }
 
-        dd($products_arr);
+       // dd($products_arr);
 
-        return view('user_detail')->with('user_id', $id);
+        return view('user_detail')->with('user_id', $id)->with('products', $products_arr)->with('all_categories', $all_categories);
     }
 
     /**
