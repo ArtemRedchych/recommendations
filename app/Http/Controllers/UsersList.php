@@ -115,9 +115,9 @@ class UsersList extends Controller
             while(count($categories_queue)){
                 var_dump("Inside WHILE");
                 var_dump($categories_queue);
-                var_dump("current_cat_id = ". $current_cat_id);
+                
                 $current_cat_id = end($categories_queue);
-
+                var_dump("current_cat_id = ". $current_cat_id);
                 //find current category parent category
                 $parent_categories = DB::select("
                     SELECT cat.subcategory FROM category AS cat WHERE cat.id = ?
