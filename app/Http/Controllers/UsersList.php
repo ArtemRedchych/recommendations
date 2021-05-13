@@ -15,7 +15,7 @@ class UsersList extends Controller
      */
     public function index()
     {
-        /*$users = DB::select("
+        $users = DB::select("
         SELECT test.custommer_id, test.order FROM
         (
             SELECT 
@@ -36,7 +36,7 @@ class UsersList extends Controller
 
         "
         );
-        dd($users);*/
+        /*dd($users);
         //$users = new stdClass; 
         $users = array();
         for($i = 0; $i < 10; $i++){
@@ -44,7 +44,7 @@ class UsersList extends Controller
             $user->custommer_id = $i+1;
             $user->order = 2*$i+1;
             $users[] = $user;
-        }
+        }*/
         
         //var_dump($users);
        // $users = "dasdasda";
@@ -96,7 +96,7 @@ class UsersList extends Controller
         $products_arr = array();
         foreach($products_std as $product){
             $prod_categories = array();
-            $prod_categories_queue = array();
+            $categories_queue = array();
             $prod_categories_std = DB::select("
                 SELECT cat.id, cat.subcategory FROM product_category AS pc
                 LEFT JOIN category AS cat ON cat.id =  pc.id_category
@@ -107,11 +107,11 @@ class UsersList extends Controller
             ", [$product->id]);
             foreach($prod_categories_std as $prod_cat){
                 $prod_categories[$prod_cat->id] = $prod_cat->id;
-                array_push($prod_categories_queue, $prod_cat->id);
+                array_push($categories_queue, $prod_cat->id);
             }
             //for each category find parent ant add to the list
-            while(count($prod_categories_queue)){
-                $current_cat_id = end($prod_categories_queue);
+            while(count($categories_queue)){
+                $current_cat_id = end($categories_queue);
 
                 //find current category parent category
                 $parent_categories = DB::select("
@@ -122,14 +122,16 @@ class UsersList extends Controller
                 foreach($parent_categories as $par_cats){
                     //current category doesn't have parent category OR it alreaty is in the list
                     if($par_cats->subcategory == 0 || array_key_exists($par_cats->subcategory, $prod_categories)){
+                        dd("already in array " . $par_cats->subcategory);
+                        dd($prod_categories);
                         continue;
                     }
 
                     $prod_categories[$par_cats->subcategory] = $par_cats->subcategory;
-                    array_push($prod_categories_queue, $prod_cat->subcategory);
+                    array_push($categories_queue, $prod_cat->subcategory);
                 }
 
-                array_pop($prod_categories_queue);
+                array_pop($categories_queue);
             }
             $products_arr[] = array(
                 "id" => $product->id,

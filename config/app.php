@@ -38,9 +38,9 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
-
+    'debug' => env('APP_DEBUG',  $_SERVER['REMOTE_ADDR'] == '147.32.31.195' ? true : false)
     //'debug' => (bool) env('APP_DEBUG', false),
-    'debug' => true,
+    //'debug' => true,
 
     /*
     |--------------------------------------------------------------------------
