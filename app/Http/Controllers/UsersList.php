@@ -121,7 +121,7 @@ class UsersList extends Controller
                 
                 foreach($parent_categories as $par_cats){
                     //current category doesn't have parent category OR it alreaty is in the list
-                    if($par_cats->subcategory == 0 || array_key_exists($prod_categories)){
+                    if($par_cats->subcategory == 0 || array_key_exists($par_cats->subcategory, $prod_categories)){
                         continue;
                     }
 
