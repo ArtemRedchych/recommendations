@@ -110,7 +110,12 @@ class UsersList extends Controller
                 array_push($categories_queue, $prod_cat->id);
             }
             //for each category find parent ant add to the list
+            dd("Before");
+            dd($categories_queue);
             while(count($categories_queue)){
+                dd("Inside WHILE");
+                dd($categories_queue);
+                dd("current_cat_id = ". $current_cat_id);
                 $current_cat_id = end($categories_queue);
 
                 //find current category parent category
