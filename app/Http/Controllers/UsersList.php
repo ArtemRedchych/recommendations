@@ -15,7 +15,7 @@ class UsersList extends Controller
      */
     public function index()
     {
-        $users = DB::select("
+        /*$users = DB::select("
         SELECT test.custommer_id, test.order FROM
         (
             SELECT 
@@ -36,15 +36,16 @@ class UsersList extends Controller
 
         "
         );
-        /*dd($users);
-        $users = array(
-            array('custommer_id' => 1, "order" => 12),
-            array('custommer_id' => 2, "order" => 32),
-            array('custommer_id' => 3, "order" => 1),
-            array('custommer_id' => 4, "order" => 55),
-            array('custommer_id' => 5, "order" => 22),
-            array('custommer_id' => 6, "order" => 33),
-        );*/
+        dd($users);*/
+        //$users = new stdClass; 
+        $users = array();
+        for($i = 0; $i < 10; $i++){
+            $user = new \stdClass(); 
+            $user->custommer_id = $i+1;
+            $user->order = 2*$i+1;
+            $users[] = $user;
+        }
+        
         //var_dump($users);
        // $users = "dasdasda";
         return view('users_list')->with('users', $users);
@@ -79,7 +80,69 @@ class UsersList extends Controller
      */
     public function show($id)
     {
-        //
+        //2920
+        $products_std = DB::select("
+        SELECT p.id, p.title, p.author FROM order_processes AS op
+
+        LEFT JOIN order_histories as oh ON oh.number_order = op.number_order
+        LEFT JOIN products AS p ON p.id = oh.id_products
+        WHERE op.id_customers = ?
+
+        GROUP BY p.id
+        "
+        ,[$id]);
+
+        //lets get categories
+        $products_arr = array();
+        foreach($products_std as $product){
+            $prod_categories = array();
+            $prod_categories_queue = array();
+            $prod_categories_std = DB:select("
+                SELECT cat.id, cat.subcategory FROM product_category AS pc
+                LEFT JOIN category AS cat ON cat.id =  pc.id_category
+
+                WHERE id_products = ?;
+            
+            
+            ", [$product->id]);
+            foreach($prod_categories_std as $prod_cat){
+                $prod_categories[$prod_cat->id] = $prod_cat->id;
+                array_push($prod_categories_queue, $prod_cat->id);
+            }
+            //for each category find parent ant add to the list
+            while(count($prod_categories_queue)){
+                $current_cat_id = end($prod_categories_queue);
+
+                //find current category parent category
+                $parent_categories = DB::select("
+                    SELECT cat.subcategory FROM category AS cat WHERE cat.id = ?
+                
+                ",[$current_cat_id]);
+                
+                foreach($parent_categories as $par_cats){
+                    //current category doesn't have parent category OR it alreaty is in the list
+                    if($par_cats->subcategory == 0 || array_key_exists($prod_categories)){
+                        continue;
+                    }
+
+                    $prod_categories[$par_cats->subcategory] = $par_cats->subcategory;
+                    array_push($prod_categories_queue, $prod_cat->subcategory);
+                }
+
+                array_pop($prod_categories_queue);
+            }
+            $products_arr[] = array(
+                "id" => $product->id,
+                "title" => $product->title,
+                "author" => $product->author,
+                "categories" => $prod_categories
+            );
+
+            
+        }
+
+        dd($products_arr);
+        
         return view('user_detail')->with('user_id', $id);
     }
 
