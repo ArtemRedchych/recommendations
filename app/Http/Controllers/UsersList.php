@@ -117,6 +117,7 @@ class UsersList extends Controller
                 var_dump($categories_queue);
                 
                 $current_cat_id = end($categories_queue);
+                array_pop($categories_queue);
                 var_dump("current_cat_id = ". $current_cat_id);
                 //find current category parent category
                 $parent_categories = DB::select("
@@ -136,7 +137,7 @@ class UsersList extends Controller
                     array_push($categories_queue, $prod_cat->subcategory);
                 }
 
-                array_pop($categories_queue);
+                
             }
             $products_arr[] = array(
                 "id" => $product->id,
@@ -148,7 +149,7 @@ class UsersList extends Controller
             
         }
 
-        var_dump($products_arr);
+        dd($products_arr);
 
         return view('user_detail')->with('user_id', $id);
     }
