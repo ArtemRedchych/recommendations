@@ -97,7 +97,7 @@ class UsersList extends Controller
         foreach($products_std as $product){
             $prod_categories = array();
             $prod_categories_queue = array();
-            $prod_categories_std = DB:select("
+            $prod_categories_std = DB::select("
                 SELECT cat.id, cat.subcategory FROM product_category AS pc
                 LEFT JOIN category AS cat ON cat.id =  pc.id_category
 
@@ -142,7 +142,7 @@ class UsersList extends Controller
         }
 
         dd($products_arr);
-        
+
         return view('user_detail')->with('user_id', $id);
     }
 
