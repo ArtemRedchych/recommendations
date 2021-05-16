@@ -60,7 +60,7 @@
               <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                   <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/users') ? 'active' : '' }}" aria-current="page" href="{{url('/users')}}">Users</a>
+                    <a class="nav-link {{ Request::is('users*') ? 'active' : '' }}" aria-current="page" href="{{url('/users')}}">Users</a>
                   </li>
                   
                   
