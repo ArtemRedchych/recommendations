@@ -78,7 +78,7 @@ class IDFVector extends Model
     }
 
     private function setAllProdsItems(array & $categories){
-        $products_std = DB::select('SELECT id FROM products ORDER BY id ASC');
+        $products_std = DB::select('SELECT id FROM products ORDER BY id ASC LIMIT 10000');
 
         $products_arr = array();
         foreach($products_std as $product){
