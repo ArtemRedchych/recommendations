@@ -33,7 +33,7 @@ class UsersList extends Controller
             GROUP BY cus.id
         ) AS test
 
-        ORDER BY test.order DESC ;
+        ORDER BY test.order DESC LIMIT 20;
 
         "
         );

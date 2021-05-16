@@ -17,7 +17,7 @@ class UserItem extends Model
             foreach ($product_items as $prod_key => $prod_item) {
             // dd($prod_value);
                 $tmp_sum += $prod_item->item_vector[$cat_key];
-                var_dump($prod_item->item_vector[$cat_key]);
+                //var_dump($prod_item->item_vector[$cat_key]);
             }
 
             $this->item_vector[$cat_key] = $tmp_sum;
