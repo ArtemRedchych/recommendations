@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+<script>
+        $(document).ready(function() {
+                 $('#users_table').DataTable();
+        } );
+</script>
 @section('content')
 <main style="padding-top: 30px;" class="flex-shrink-0">
         <div class="container">
@@ -8,7 +12,7 @@
                                 <h1 class="mt-5">Users list</h1>
                         </div>
                         <div class="col-12">
-                                <table class="table">
+                                <table id="users_table" class="table">
                                         <thead>
                                           <tr>
                                             <th scope="col">ID</th>
