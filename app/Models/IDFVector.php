@@ -131,7 +131,7 @@ class IDFVector extends Model
             }
             
         }
-       // dd($this->all_products_items);
+        dd($this->all_products_items);
 
     }
 }
