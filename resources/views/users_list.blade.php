@@ -3,7 +3,9 @@
 @section('content')
 <script>
         $(document).ready(function() {
-                 $('#users_table').DataTable();
+                 $('#users_table').DataTable({
+                        "order": [[ 3, "desc" ]]
+                 });
         } );
 </script>
 <main style="padding-top: 30px;" class="flex-shrink-0">
