@@ -1,3 +1,3 @@
 Content-based recommendation system
 
-Projek pro předmět BI-VWM
+Projekt pro předmět BI-VWM
