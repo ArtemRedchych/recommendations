@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductItem;
+use Illuminate\Support\Facades\Log;
 
 class IDFVector extends Model
 {
@@ -78,9 +79,11 @@ class IDFVector extends Model
     }
 
     private function setAllProdsItems(array & $categories){
-        $products_std = DB::select('SELECT id FROM products ORDER BY id ASC LIMIT 5000');
+        $products_std = DB::select('SELECT id FROM products');
         //dd($products_std);
         $products_arr = array();
+        $index = 0;
+        $big_idex = 0;
         foreach($products_std as $product){
             $prod_categories = array();
             $categories_queue = array();
@@ -120,9 +123,15 @@ class IDFVector extends Model
             }*/
             
             $this->all_products_items[$product->id] =  new ProductItem($prod_categories, $categories);
+            $index++;
+            if($index > 1000){
+                $index = 0;
+                $big_idex++;
+                Log::debug("Suka bliat ". $big_idex);
+            }
             
         }
-        dd($this->all_products_items);
+       // dd($this->all_products_items);
 
     }
 }
