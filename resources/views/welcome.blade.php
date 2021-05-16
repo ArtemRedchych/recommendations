@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script>
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">Content-based recommendation system</h1>

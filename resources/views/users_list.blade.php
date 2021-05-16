@@ -1,15 +1,19 @@
 @extends('layouts.app')
+
+@section('content')
 <script>
         $(document).ready(function() {
                  $('#users_table').DataTable();
         } );
 </script>
-@section('content')
 <main style="padding-top: 30px;" class="flex-shrink-0">
         <div class="container">
                 <div class="row">
                         <div class="col-12">
                                 <h1 class="mt-5">Users list</h1>
+                        </div>
+                        <div class="col-12">
+                                <h4 class="mt-5">Výpočet po zmáčknutí tlačítka "Detail" trvá cca 30 vteřin</h1>
                         </div>
                         <div class="col-12">
                                 <table id="users_table" class="table">
