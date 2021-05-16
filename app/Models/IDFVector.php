@@ -97,10 +97,10 @@ class IDFVector extends Model
             ", [$product->id]);
             foreach($prod_categories_std as $prod_cat){
                 $prod_categories[$prod_cat->id] = $prod_cat->id;
-               //TEST  array_push($categories_queue, $prod_cat->id);
+                array_push($categories_queue, $prod_cat->id);
             }
             //for each category find parent ant add to the list
-            /* TEST while(count($categories_queue)){
+            while(count($categories_queue)){
                 $current_cat_id = end($categories_queue);
                 array_pop($categories_queue);
                 //find current category parent category
@@ -120,7 +120,7 @@ class IDFVector extends Model
                 }
 
                 
-            }*/
+            }
             
             $this->all_products_items[$product->id] =  new ProductItem($prod_categories, $categories);
             $index++;
