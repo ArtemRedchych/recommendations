@@ -79,7 +79,7 @@ class IDFVector extends Model
     }
 
     private function setAllProdsItems(array & $categories){
-        $products_std = DB::select('SELECT id FROM products LIMIT 5000');
+        $products_std = DB::select('SELECT id FROM products LIMIT 2500');
         //dd($products_std);
         $products_arr = array();
         $index = 0;
