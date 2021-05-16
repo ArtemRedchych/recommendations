@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Models\Recommend;
+
 class UsersList extends Controller
 {
     /**
@@ -31,13 +33,12 @@ class UsersList extends Controller
             GROUP BY cus.id
         ) AS test
 
-        ORDER BY test.order DESC
-        LIMIT 10;
+        ORDER BY test.order DESC ;
 
         "
         );
-        /*dd($users);
-        //$users = new stdClass; 
+       
+        /*$users = new stdClass; 
         $users = array();
         for($i = 0; $i < 10; $i++){
             $user = new \stdClass(); 
@@ -148,9 +149,24 @@ class UsersList extends Controller
             
         }
 
-       // dd($products_arr);
+        // dd($products_arr);
+        $rec = new Recommend($products_arr);
+        $recom_prods_ids = $rec->recommend(10);
+        $recomm_prods = array();
+        foreach ($recom_prods_ids as $product_id => $score) {
+            $product_raw = DB::select('SELECT * FROM products WHERE id = ?', [$product_id]);
 
-        return view('user_detail')->with('user_id', $id)->with('products', $products_arr)->with('all_categories', $all_categories);
+            $recomm_prods[] = array(
+                "id" => $product_id,
+                "title" => $product_raw[0]->title,
+                "author" => $product_raw[0]->author,
+                "categories" => $rec->getProductCategories($product_id),
+                "score" => $score
+            );
+        }
+        
+
+        return view('user_detail')->with('user_id', $id)->with('products', $products_arr)->with('all_categories', $all_categories)->with("recomm_prods", $recomm_prods);
     }
 
     /**

@@ -13,7 +13,7 @@
                         </div>
 
                 </div>
-                <div>
+                <div class="row">
                         <div class="col-12">
                                 <table class="table">
                                         <thead>
@@ -33,7 +33,7 @@
                                                                 <th>
                                                                         @foreach ($product['categories'] as $category)
                                                                                 {{ $loop->first ? '' : ', ' }}
-                                                                                {{$category}}
+                                                                                {{$all_categories[$category]}}
                                                                         @endforeach
                                                                 </th>
                                                       </tr> 
@@ -43,6 +43,45 @@
                                 </table>
                         </div>
                 </div>
+
+                <div class="row">
+                        <div class="col-12">
+                                <h3 class="mt-3">Recommended products:</h1>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-12">
+                                <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">ProductID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Author</th>
+                                            <th scope="col">Categories</th>
+                                            <th scope="col">Score</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                                @foreach ($recomm_prods as $product)
+                                                        <tr>
+                                                                <th scope="row">{{$product['id']}}</th>
+                                                                <th>{{$product['title']}}</th>
+                                                                <th>{{$product['author']}}</th>
+                                                                <th>
+                                                                        @foreach ($product['categories'] as $category)
+                                                                                {{ $loop->first ? '' : ', ' }}
+                                                                                {{$all_categories[$category]}}
+                                                                        @endforeach
+                                                                </th>
+                                                                <th>{{$product['score']}}</th>
+                                                      </tr> 
+                                                @endforeach
+                                         
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+
         </div>
 </main>
 @endsection
